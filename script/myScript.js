@@ -1,7 +1,8 @@
-var max_time = 5;
 var myInterval;
 var data;           // store the JSON data
-
+var cur;            // record of the current selected answer
+var answer;         // record of the user's answer
+var right;          // record of the right answer
 
 // set up when the page loads
 window.onload = function() {
@@ -25,7 +26,6 @@ window.onload = function() {
     });
 
     multiple();
-
 };
 
 // get the number of questions
@@ -79,8 +79,16 @@ function ajax_get_json() {
 
 // record which one is selected
 function multiple() {
-    $("#answer").click(function() {
-        alert(this.id);
+    $("#answer").children().click(function() {
+        var allId = ["A", "B", "C", "D"];
+        cur = this.id;
+        allId.splice(allId.indexOf(cur), 1);
+        $("#" + cur).css("color", "red");
+        for (var i in allId) {
+            $("#" + allId[i]).css("color", "black");
+        }
+        answer = $("#" + cur).html();
+        console.log(answer);
     });
 }
 
@@ -95,6 +103,12 @@ function score(answer, a) {
     $("#count").html = count;
 }
 
+// if the answer is correct
+function isRightAnswer() {
+    increment("#score", 1);
+    answer = null;
+}
+
 /*
 // get the question
 function getQuestion(responseText) {
@@ -105,16 +119,43 @@ function getQuestion(responseText) {
 
 // parse the JSON file for question and answer
 function displayQuestion(data) {
-    console.log(data);
     $("#question").html(data.questions[0][0].q);
-    $("#A").html(data.questions[0][0].a);
-    $("#B").html(data.questions[0][0].xa[0]);
-    $("#C").html(data.questions[0][0].xa[1]);
-    $("#D").html(data.questions[0][0].xa[2]);
+
+    // display the options in a random order
+    var allId = ["A", "B", "C", "D"];
+    var randomSet = [];
+    for (var i = 0; i < 4; i++) {
+        var rand = Math.floor(Math.random() * 4);
+        while (randomSet.indexOf(rand) !== -1) {
+            rand = Math.floor(Math.random() * 4);
+        }
+        randomSet.push(rand);
+    }
+    
+    $("#" + allId[randomSet[0]]).html(data.questions[0][0].a);
+    $("#" + allId[randomSet[1]]).html(data.questions[0][0].xa[0]);
+    $("#" + allId[randomSet[2]]).html(data.questions[0][0].xa[1]);
+    $("#" + allId[randomSet[3]]).html(data.questions[0][0].xa[2]);
+    right = data.questions[0][0].a;
+    console.log(right);
 }
 
 // set up a random question
 function nextQuestion() {
+    // clean the record
+    var allId = ["A", "B", "C", "D"];
+    for (var i in allId) {
+        $("#" + allId[i]).css("color", "black");
+    }
+
+    var a = "Nov 18";
+    if (a === answer) {
+        isRightAnswer();
+    }
+
+    // increment the number of questions count
+    increment("#count", 1);
+
     $("#time").html("10");                      // set time to the maximum
     clearInterval(myInterval);
     myInterval = setInterval(timer, 1000);      // time click each 1 second
