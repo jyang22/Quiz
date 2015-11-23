@@ -1,0 +1,22 @@
+{
+    "questions": [
+        [
+            {
+                "q": "whats the date today?",
+                "a": "Nov 18",
+                "xa": ["Nov 17",
+                    "Nov 19",
+                    "Nov 20"
+                ]
+            },
+            {
+                "q": "whats the datetttttt today?",
+                "a": "Novtttt 18",
+                "xa": ["Novtttt 17",
+                    "Novtttt 19",
+                    "Novttttt 20"
+                ]
+            }
+        ]
+    ]
+} 
