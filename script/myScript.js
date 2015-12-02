@@ -1,14 +1,15 @@
 var myInterval;
-var data;           // store the JSON data
-var cur;            // record of the current selected answer
-var answer;         // record of the user's answer
-var right;          // record of the right answer
+var data;               // store the JSON data
+var cur;                // record of the current selected answer
+var answer;             // record of the user's answer
+var right;              // record of the right answer
+var questionSet = [];   // questions already be taken
+var cate = 1;           // category number
 
 // set up when the page loads
 window.onload = function() {
-    var c = 0;      // category number
-    var q = 1;      // question number
 
+    //ajax_get_json();
     nextQuestion();
 
     // click next and go to the next question
@@ -22,30 +23,26 @@ window.onload = function() {
 
     $("#resume").click(function() {
         clearInterval(myInterval);
-        myInterval = setInterval(timer, 1000);       
+        myInterval = setInterval(timer, 1000);
     });
 
-    multiple();
-};
-
-// get the number of questions
-/*
-function getNumber() {
-    //data = 10;
-    var AJAX_req = new XMLHttpRequest();
-    AJAX_req.open( "GET", "question.json", true );
-    AJAX_req.setRequestHeader("Content-type", "application/json");
- 
-    AJAX_req.onreadystatechange = function() {
-        if( AJAX_req.readyState == 4 && AJAX_req.status == 200 ) {
-            data = JSON.parse(AJAX_req.responseText);
-            var number = data.question[0].length;
+    // record the answer currently being selected - multiple choice
+    $("#answer-multiple").children().click(function() {
+        var allId = ["A", "B", "C", "D"];
+        cur = this.id;
+        allId.splice(allId.indexOf(cur), 1);
+        $("#" + cur).css("color", "red");
+        for (var i in allId) {
+            $("#" + allId[i]).css("color", "black");
         }
-    }
-    AJAX_req.send();
-    return number;
-}
-*/
+        answer = $("#" + cur).html();
+    });
+
+    // record the answer currently being selected - input
+    $("#input").change(function() {
+        answer = $("#input").val();
+    });
+};
 
 // timer
 function timer() {
@@ -77,21 +74,6 @@ function ajax_get_json() {
     AJAX_req.send();
 }
 
-// record which one is selected
-function multiple() {
-    $("#answer").children().click(function() {
-        var allId = ["A", "B", "C", "D"];
-        cur = this.id;
-        allId.splice(allId.indexOf(cur), 1);
-        $("#" + cur).css("color", "red");
-        for (var i in allId) {
-            $("#" + allId[i]).css("color", "black");
-        }
-        answer = $("#" + cur).html();
-        console.log(answer);
-    });
-}
-
 // get score
 function score(answer, a) {
     if (answer === a) {
@@ -109,34 +91,67 @@ function isRightAnswer() {
     answer = null;
 }
 
-/*
-// get the question
-function getQuestion(responseText) {
-    data = JSON.parse(responseText);
-    return data;
-}
-*/
-
-// parse the JSON file for question and answer
-function displayQuestion(data) {
-    $("#question").html(data.questions[0][0].q);
-
-    // display the options in a random order
-    var allId = ["A", "B", "C", "D"];
+// generate a random order
+function randOrder(num) {
     var randomSet = [];
-    for (var i = 0; i < 4; i++) {
-        var rand = Math.floor(Math.random() * 4);
+    for (var i = 0; i < num; i++) {
+        var rand = Math.floor(Math.random() * num);
         while (randomSet.indexOf(rand) !== -1) {
             rand = Math.floor(Math.random() * 4);
         }
         randomSet.push(rand);
     }
-    
-    $("#" + allId[randomSet[0]]).html(data.questions[0][0].a);
-    $("#" + allId[randomSet[1]]).html(data.questions[0][0].xa[0]);
-    $("#" + allId[randomSet[2]]).html(data.questions[0][0].xa[1]);
-    $("#" + allId[randomSet[3]]).html(data.questions[0][0].xa[2]);
-    right = data.questions[0][0].a;
+    return randomSet;
+}
+
+// parse the JSON file for question and answer
+function displayQuestion(data) {
+    var ques_all = data.questions[cate].length
+    // finished all the questions
+    if (questionSet.length === ques_all) {
+        clearInterval(myInterval);
+        var score = $("#score").html();
+        $("#finish").show();
+        alert("You have finished all the questions." + "\n" + "Your score is " + score + "/" + ques_all);
+        return;
+    }
+
+
+    while (true) {
+        var cur_ques = Math.floor(Math.random() * ques_all);
+        if (questionSet.indexOf(cur_ques) === -1) {
+            questionSet.push(cur_ques);
+            break;
+        }
+    }
+
+    // convert between multiple choice and input text
+    if (data.questions[cate][cur_ques].xa.length > 1) {
+        $("#answer-input").hide();
+        $("#answer-multiple").show();
+        $("#question").html(data.questions[cate][cur_ques].q);
+        console.log("cur_ques" + cur_ques);
+
+        // display the options in a random order
+        var allId = ["A", "B", "C", "D"];
+        var order = randOrder(4);
+
+        $("#" + allId[order[0]]).html(data.questions[cate][cur_ques].a);
+        $("#" + allId[order[1]]).html(data.questions[cate][cur_ques].xa[0]);
+        $("#" + allId[order[2]]).html(data.questions[cate][cur_ques].xa[1]);
+        $("#" + allId[order[3]]).html(data.questions[cate][cur_ques].xa[2]);
+        right = data.questions[cate][cur_ques].a;
+
+    } else {
+        $("#question").html(data.questions[cate][cur_ques].q);
+        $("#answer-input").show();
+        $("#answer-multiple").hide();
+        $("#input").val("");
+        console.log("here");
+
+        right = data.questions[cate][cur_ques].a;
+    }
+
     console.log(right);
 }
 
@@ -148,8 +163,9 @@ function nextQuestion() {
         $("#" + allId[i]).css("color", "black");
     }
 
-    var a = "Nov 18";
-    if (a === answer) {
+
+    // if the answer is right, score pluses 1
+    if (right === answer) {
         isRightAnswer();
     }
 
@@ -160,8 +176,8 @@ function nextQuestion() {
     clearInterval(myInterval);
     myInterval = setInterval(timer, 1000);      // time click each 1 second
     //i = parseInt(Math.random() * 10) + 1;
-    ajax_get_json();
     score();                                    // show the score and question number
+    ajax_get_json();
 
 }
 

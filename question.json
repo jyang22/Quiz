@@ -2,19 +2,351 @@
     "questions": [
         [
             {
-                "q": "whats the date today?",
-                "a": "Nov 18",
-                "xa": ["Nov 17",
-                    "Nov 19",
-                    "Nov 20"
+                "q": "Do heavier objects fall more slowly than lighter objects?",
+                "a": "Yes, but only in vacuum.",
+                "xa": ["Yes, in all circumstances.",
+                    "Not sure.",
+                    "No in all circumstances."
                 ]
             },
             {
-                "q": "whats the datetttttt today?",
-                "a": "Novtttt 18",
-                "xa": ["Novtttt 17",
-                    "Novtttt 19",
-                    "Novttttt 20"
+                "q": "Two identical cars collide head on. Each car is traveling at 100 km/h. The impact force on each car is the same as hitting a solid wall at: ",
+                "a": "100 km/h",
+                "xa": ["200 km/h",
+                    "150 km/h",
+                    "50 km/h"
+                ]
+            },
+            {
+                "q": "A car travels 90. meters due north in 15 seconds. Then the car turns around and travels 40. meters due south in 5.0 seconds. What is the magnitude of the average velocity of the car during this 20.-second interval?  ",
+                "a": "2.5 m/s",
+                "xa": ["5.0 m/s",
+                    "6.5 m/s",
+                    "7.0 m/s"
+                ]
+            },
+            {
+                "q": "How far will a brick starting from rest fall freely in 3.0 seconds?",
+                "a": "44 m",
+                "xa": ["15 m",
+                    "29 m",
+                    "88 m"
+                ]
+            },
+            {
+                "q": "The moon remains in its orbit around the earth due to the _______ forces between the two bodies.",
+                "a": "gravitational",
+                "xa": ["magnetic",
+                    "electrostatic",
+                    "frictional"
+                ]
+            },
+            {
+                "q": "Which is the odd one out?",
+                "a": "momentum",
+                "xa": ["density",
+                    "speed",
+                    "mass"
+                ]
+            },
+            {
+                "q": "Force is defined as",
+                "a": "mass × acceleration",
+                "xa": ["pressure / area",
+                    "mass × velocity",
+                    "mass / volume"
+                ]
+            },
+            {
+                "q": "The gravitational force acting on an object is called its",
+                "a": "weight",
+                "xa": ["density",
+                    "mass",
+                    "momentum"
+                ]
+            },
+            {
+                "q": "A mass of 7 kg moves at 4 m/s. Its momentum is",
+                "a": "70 N s",
+                "xa": ["28 kg m/s2",
+                    "70 kg m/s2",
+                    "28 N s"
+                ]
+            },
+            {
+                "q": "The rate of change of _______ is due to forces applied.",
+                "a": "velocity",
+                "xa": ["acceleration",
+                    "momentum",
+                    "displacement"
+                ]
+            }
+        ],
+        [
+            {
+                "q": "Subtract the second even number from the third square number.",
+                "a": "-5",
+                "xa": []
+            },
+            {
+                "q": "Divide a thousand by a hundred.",
+                "a": "10",
+                "xa": []
+            },
+            {
+                "q": "How many seconds are there in four and a half minutes?",
+                "a": "270",
+                "xa": []
+            },
+            {
+                "q": "How many grams are in one kilogram?",
+                "a": "1000",
+                "xa": []
+            },
+            {
+                "q": "What is the largest prime number less than 20?",
+                "a": "19",
+                "xa": []
+            },
+            {
+                "q": "What is 53 to the power 4 ?",
+                "a": "7890481",
+                "xa": ["658921",
+                    "212",
+                    "1975"
+                ]
+            },
+            {
+                "q": "What is 234694 times 789",
+                "a": "185173566",
+                "xa": ["18517356",
+                    "28517359",
+                    "185173567"
+                ]
+            },
+            {
+                "q": "Which of the following is a subset of  {b, c, d} ?",
+                "a": "{}",
+                "xa": ["{a}",
+                    "{1, 2, 3}",
+                    "{a, b, c}"
+                ]
+            },
+            {
+                "q": "The value of 5 in the number 357.21 is",
+                "a": "5 tens",
+                "xa": ["5 ones",
+                    "5 tenths",
+                    "5 hundreds"
+                ]
+            },
+            {
+                "q": "In coordinate geometry, the equation of the x-axis is ",
+                "a": "y = 0",
+                "xa": ["y = x",
+                    "x = 0",
+                    "y = 1"
+                ]
+            }
+        ],
+        [
+            {
+                "q": "What is Paris Hilton's shoe size ?",
+                "a": "11",
+                "xa": []
+            },
+            {
+                "q": "Did Sarah Millican once weed on the passenger seat of her car when she was stuck in a traffic jam ?",
+                "a": "Yes",
+                "xa": []
+            },
+            {
+                "q": "Is Hugh Bonneville set to do a nude scene in the next series of Downton Abbey ?",
+                "a": "No",
+                "xa": []
+            },
+            {
+                "q": "Was Benedict Cumberbatch’s first acting role playing a girl in Half a Sixpence ?",
+                "a": "Yes",
+                "xa": []
+            },
+            {
+                "q": "Can Star Trek superfan and current Who companion Jenna-Louise Coleman speak fluent Klingon ?",
+                "a": "No",
+                "xa": []
+            },
+            {
+                "q": "What is Pete Wentz middle name ?",
+                "a": "Kingsley",
+                "xa": ["John",
+                    "Joel",
+                    "Carter"
+                ]
+            },
+            {
+                "q": "Who is pregnent ?",
+                "a": "Britney Spears",
+                "xa": ["Paris Hilton",
+                    "Nicole Richie",
+                    "Miley Cyrus"
+                ]
+            },
+            {
+                "q": "Who is married ?",
+                "a": "Ashley Tisdale",
+                "xa": ["Britney Spears",
+                    "Jason Earles",
+                    "Jay Leno"
+                ]
+            },
+            {
+                "q": "How many tatoo's does Avril Lavigne have",
+                "a": "more than 5",
+                "xa": ["0",
+                    "2",
+                    "4"
+                ]
+            },
+            {
+                "q": "Is that true that Silver Linings Playbook actress Jennifer Lawrence can skin squirrels ?",
+                "a": "Yes",
+                "xa": ["No",
+                    "Not sure",
+                    "Yes, but it is a squirrel toy."
+                ]
+            }
+        ],
+        [
+            {
+                "q": "Who was the first president born an American citizen?",
+                "a": "Martin Van Buren",
+                "xa": []
+            },
+            {
+                "q": "Most people know that, at 6 feet 4 inches, Abraham Lincoln was the tallest president. Who was the shortest ?",
+                "a": "James Madison",
+                "xa": []
+            },
+            {
+                "q": "Which president is not on Mount Rushmore ?",
+                "a": "Andrew Jackson",
+                "xa": []
+            },
+            {
+                "q": "Which of these presidents did not win the Nobel Peace Prize?",
+                "a": "Franklin D. Roosevelt",
+                "xa": []
+            },
+            {
+                "q": "How many presidents have died on the Fourth of July ?",
+                "a": "3",
+                "xa": []
+            },
+            {
+                "q": "Most people know that teddy bears were named after Teddy Roosevelt. Which president had a fairly popular sport named after him ?",
+                "a": "Herbert Hoover",
+                "xa": ["George Washington",
+                    "Grover Cleveland",
+                    "Harry Truman"
+                ]
+            },
+            {
+                "q": "Who is the only president to hold a patent ?",
+                "a": "Abraham Lincoln",
+                "xa": ["James Buchanan",
+                    "Woodrow Wilson",
+                    "Jimmy Carter"
+                ]
+            },
+            {
+                "q": "Who was the first president elected who had previously been divorced ?",
+                "a": "Ronald Reagan",
+                "xa": ["Dwight D. Eisenhower",
+                    "John F. Kennedy",
+                    "George H.W. Bush"
+                ]
+            },
+            {
+                "q": "Who was the first commander in chief to have a presidential airplane ?",
+                "a": "Franklin D. Roosevelt",
+                "xa": ["Harry Truman",
+                    "Dwight D. Eisenhower",
+                    "John F. Kennedy"
+                ]
+            },
+            {
+                "q": "How many presidents have been assassinated ?",
+                "a": "4",
+                "xa": ["2",
+                    "3",
+                    "5"
+                ]
+            }
+        ],
+        [
+            {
+                "q": "Which country is the second largest in Asia by surface area ?",
+                "a": "China",
+                "xa": []
+            },
+            {
+                "q": "What is the most widely spoken language of the world (by first language speakers) ?",
+                "a": "Mandarin",
+                "xa": []
+            },
+            {
+                "q": "What is Earth's second largest continent by population ?",
+                "a": "Afria",
+                "xa": []
+            },
+            {
+                "q": "Which country is the second largest in the world by surface area ?",
+                "a": "Canada",
+                "xa": []
+            },
+            {
+                "q": "WWhat is the highest mountain on Earth (from sea level to top) ?",
+                "a": "Mount Everest",
+                "xa": []
+            },
+            {
+                "q": "Which of these is the largest river by discharge of water in the world ?",
+                "a": "Amazon",
+                "xa": ["Nile",
+                    "Mekong",
+                    "Mississippi"
+                ]
+            },
+            {
+                "q": "What is the northernmost nation in the world ?",
+                "a": "Reykjavík",
+                "xa": ["Ulaanbaatar",
+                    "Ottawa",
+                    "Helsinki"
+                ]
+            },
+            {
+                "q": "The Great Barrier Reef is off the coast of which country ?",
+                "a": "Australia",
+                "xa": ["Brazil",
+                    "Japan",
+                    "Canada"
+                ]
+            },
+            {
+                "q": "What is Earth's approximate water vs. land coverage ratio ?",
+                "a": "71 to 19",
+                "xa": ["81 to 29",
+                    "61 to 39",
+                    "51 to 49"
+                ]
+            },
+            {
+                "q": "What is the name of the circle that lies about 23 degrees north of Earth's equator ?",
+                "a": "Tropic of Cancer",
+                "xa": ["Tropic of Gemini",
+                    "Tropic of Capricorn",
+                    "Tropic of Aries"
                 ]
             }
         ]

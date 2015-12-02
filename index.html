@@ -14,30 +14,40 @@
             <fieldset>
                 <legend>Time</legend>
                 <div><span id="time">15</span> sec</div>
+                <div id="pause">Pause</div>
+                <div id="resume">Resume</div>
             </fieldset>
 
             <!-- problem -->
             <fieldset>
                 <legend>Question</legend>
                 <div id="question">question</div>
-                <div id="answer">
-                    <div id="A">A</div>
-                    <div id="B">B</div>
-                    <div id="C">C</div>
-                    <div id="D">D</div>
+                <div id="answer-multiple">
+                    <div id="A"></div>
+                    <div id="B"></div>
+                    <div id="C"></div>
+                    <div id="D"></div>
+                    
                 </div>
+                <div id="answer-input">
+                    <input id="input" type="text">
+                </div>
+
                 <div id="next">Next</div>
-                <div id="pause">Pause</div>
-                <div id="resume">Resume</div>
             </fieldset>
 
             <!-- score -->
             <fieldset>
                 <legend>Score</legend>
                 <div>
-                    <span id="score">0</span> / <span id="count">-1</span>
+                    <span id="score">-1</span> / <span id="count">-1</span>
                 </div>
             </fieldset>
+
+            <!-- show cover after answered all the questions -->
+            <div id="finish">
+
+            </div>
         </div>
     </body>
 </html>

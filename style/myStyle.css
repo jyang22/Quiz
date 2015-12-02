@@ -1,15 +1,21 @@
 * {
     margin: 0;
     padding: 0;
+    background-color: #d8ecf4;
 }
 
 #container {
     width: 60%;
     margin: 0 auto; 
+    background-color: #b4d9e8;
 }
 
 #container fieldset {
     padding: 20px;
+}
+
+#next, #pause, #resume {
+    cursor: pointer;
 }
 
 #next:hover {
@@ -25,4 +31,20 @@
 #resume:hover {
     background-color: #000;
     color: #fff;
+}
+
+#A, #B, #C, #D {
+    cursor: pointer;
+}
+
+#finish {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: #ccc;
+    opacity: 0.5;
+    z-index: 999;
 }
