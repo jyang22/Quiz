@@ -1,21 +1,51 @@
 * {
     margin: 0;
     padding: 0;
-    background-color: #d8ecf4;
+    /*background-color: #d8ecf4;*/
 }
 
 #container {
     width: 60%;
     margin: 0 auto; 
-    background-color: #b4d9e8;
+    /*background-color: #b4d9e8;*/
 }
 
-#container fieldset {
+/* time */
+#time-container {
     padding: 20px;
+}
+
+#time-container p {
+    position: absolute;
+    top: 65px;
+    left: 450px;
+    background-color: transparent;
+}
+
+#time {
+    background-color: transparent;
+}
+
+#time-span {
+    width: 100%;
+    height: 30px;
+    border: 1px solid #000;
+}
+
+#time-span-run {
+    background-color: #aaa;
+    height: 100%;
+    width: 100%;
+    position: static;
+    left: 0;
 }
 
 #next, #pause, #resume {
     cursor: pointer;
+}
+
+#pause {
+    
 }
 
 #next:hover {

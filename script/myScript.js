@@ -47,6 +47,7 @@ window.onload = function() {
 // timer
 function timer() {
     var time = increment("#time", -1);
+    $("#time-span-run").css("width", time + "0%");
     if (time == -1) {
         nextQuestion();
     }
@@ -175,10 +176,9 @@ function nextQuestion() {
     $("#time").html("10");                      // set time to the maximum
     clearInterval(myInterval);
     myInterval = setInterval(timer, 1000);      // time click each 1 second
-    //i = parseInt(Math.random() * 10) + 1;
     score();                                    // show the score and question number
-    ajax_get_json();
 
+    ajax_get_json();
 }
 
 
