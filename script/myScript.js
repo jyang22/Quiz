@@ -1,13 +1,24 @@
+// Jun Yang
+
+// right answer will be in console
 var myInterval;
 var data;               // store the JSON data
 var cur;                // record of the current selected answer
 var answer;             // record of the user's answer
 var right;              // record of the right answer
 var questionSet = [];   // questions already be taken
-var cate = 1;           // category number
+var cate;           // category number
 
 // set up when the page loads
 window.onload = function() {
+    // get the category number
+    var date = new Date();
+    var d = date.getDate();
+    cate = d - 5 * parseInt(d / 5);
+    
+    $("body").css("background", "url(img/blue" + cate + ".jpg)");
+    var cateName = ["Physics", "Math", "Celebrity Facts", "Presidents", "Geography"]
+    $("#category").html(cateName[cate]);
 
     //ajax_get_json();
     nextQuestion();
@@ -31,9 +42,9 @@ window.onload = function() {
         var allId = ["A", "B", "C", "D"];
         cur = this.id;
         allId.splice(allId.indexOf(cur), 1);
-        $("#" + cur).css("color", "red");
+        $("#" + cur).addClass("selected");
         for (var i in allId) {
-            $("#" + allId[i]).css("color", "black");
+            $("#" + allId[i]).removeClass("selected");
         }
         answer = $("#" + cur).html();
     });
@@ -131,7 +142,6 @@ function displayQuestion(data) {
         $("#answer-input").hide();
         $("#answer-multiple").show();
         $("#question").html(data.questions[cate][cur_ques].q);
-        console.log("cur_ques" + cur_ques);
 
         // display the options in a random order
         var allId = ["A", "B", "C", "D"];
@@ -148,8 +158,6 @@ function displayQuestion(data) {
         $("#answer-input").show();
         $("#answer-multiple").hide();
         $("#input").val("");
-        console.log("here");
-
         right = data.questions[cate][cur_ques].a;
     }
 
@@ -161,7 +169,7 @@ function nextQuestion() {
     // clean the record
     var allId = ["A", "B", "C", "D"];
     for (var i in allId) {
-        $("#" + allId[i]).css("color", "black");
+        $("#" + allId[i]).removeClass("selected");
     }
 
 

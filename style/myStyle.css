@@ -1,25 +1,38 @@
+/* Jun Yang */
+
 * {
     margin: 0;
     padding: 0;
     /*background-color: #d8ecf4;*/
+    box-sizing: border-box;
+    font-family:Arial;
 }
 
 #container {
     width: 60%;
     margin: 0 auto; 
-    /*background-color: #b4d9e8;*/
+    background: rgba(255, 255, 255, 0.5);
+    padding: 10px;
+    border: 20px solid rgba(255, 255, 255, 0);
+    box-shadow: 10px 10px 5px #999;
+}
+
+#category {
+    color: #eee;
+    font-size: 45px;
+    margin-bottom: 20px;
 }
 
 /* time */
 #time-container {
-    padding: 20px;
 }
 
 #time-container p {
     position: absolute;
-    top: 65px;
-    left: 450px;
+    top: 108px;
+    left: 48%;
     background-color: transparent;
+    color: #fff;
 }
 
 #time {
@@ -29,11 +42,13 @@
 #time-span {
     width: 100%;
     height: 30px;
-    border: 1px solid #000;
+    border: 1px solid #999;
+    border-radius: 2px;
+    margin-bottom: 10px;
 }
 
 #time-span-run {
-    background-color: #aaa;
+    background-color: #bbb;
     height: 100%;
     width: 100%;
     position: static;
@@ -42,29 +57,88 @@
 
 #next, #pause, #resume {
     cursor: pointer;
+    width: 80px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background-color: #eee;
+    border: 1px solid #999;
+    border-radius: 5px;
 }
 
 #pause {
-    
+    float: left;
+}
+
+#resume {
+    float: right;
+}
+
+#next {
+    float: right;
 }
 
 #next:hover {
-    background-color: #000;
+    background-color: #555;
     color: #fff;
 }
 
 #pause:hover {
-    background-color: #000;
+    background-color: #444;
     color: #fff;
 }
 
 #resume:hover {
-    background-color: #000;
+    background-color: #444;
     color: #fff;
 }
 
+#question-container {
+    margin-top: 80px;
+}
+
+#question {
+    width: 100%;
+    height: 80px;
+    font-size: 20px;
+}
+
+#answer-multiple, #answer-input {
+    width: 100%;
+    height: 180px;
+}
+
 #A, #B, #C, #D {
+    line-height: 40px;
     cursor: pointer;
+    width: 90%;
+    height: 40px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+
+}
+
+#A:hover, #B:hover, #C:hover, #D:hover {
+    background-color:#f9f9f9;
+    background:linear-gradient(to bottom, #f9f9f9 5%, #e9e9e9);
+}
+
+.selected {
+    background:linear-gradient(to bottom, #f9f9f9 5%, #e9e9e9);
+}
+
+#input {
+    width: 70%;
+    height: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+#score-container {
+    color: #eee;
 }
 
 #finish {

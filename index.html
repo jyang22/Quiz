@@ -1,8 +1,10 @@
 <!DOCTYPE html>
+<!-- Jun Yang -->
+<!-- need to use MAMP -->
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="style/myStyle.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> <title>Quiz</title>
         <script type="text/javascript" src="script/myScript.js"></script>
     </head>
     <body>
@@ -19,8 +21,7 @@
             </div>
 
             <!-- problem -->
-            <fieldset>
-                <legend>Question</legend>
+            <div id="question-container">
                 <div id="question">question</div>
                 <div id="answer-multiple">
                     <div id="A"></div>
@@ -31,17 +32,16 @@
                 <div id="answer-input">
                     <input id="input" type="text">
                 </div>
-
                 <div id="next">Next</div>
-            </fieldset>
+            </div>
 
             <!-- score -->
-            <fieldset>
-                <legend>Score</legend>
+            <div id="score-container">
+                <p>Score</p>
                 <div>
                     <span id="score">-1</span> / <span id="count">-1</span>
                 </div>
-            </fieldset>
+            </div>
 
             <!-- show cover after answered all the questions -->
             <div id="finish">

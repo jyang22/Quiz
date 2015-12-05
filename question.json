@@ -12,18 +12,12 @@
             {
                 "q": "Two identical cars collide head on. Each car is traveling at 100 km/h. The impact force on each car is the same as hitting a solid wall at: ",
                 "a": "100 km/h",
-                "xa": ["200 km/h",
-                    "150 km/h",
-                    "50 km/h"
-                ]
+                "xa": []
             },
             {
                 "q": "A car travels 90. meters due north in 15 seconds. Then the car turns around and travels 40. meters due south in 5.0 seconds. What is the magnitude of the average velocity of the car during this 20.-second interval?  ",
                 "a": "2.5 m/s",
-                "xa": ["5.0 m/s",
-                    "6.5 m/s",
-                    "7.0 m/s"
-                ]
+                "xa": []
             },
             {
                 "q": "How far will a brick starting from rest fall freely in 3.0 seconds?",
@@ -305,7 +299,7 @@
                 "xa": []
             },
             {
-                "q": "WWhat is the highest mountain on Earth (from sea level to top) ?",
+                "q": "What is the highest mountain on Earth (from sea level to top) ?",
                 "a": "Mount Everest",
                 "xa": []
             },
